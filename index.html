@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calculator-container">
+        <!-- Calculator Display -->
+        <div class="display">
+            <div class="previous-operand" id="previous-operand"></div>
+            <div class="current-operand" id="current-operand"></div>
+        </div>
+
+        <!-- Calculator Keypad -->
+        <div class="keypad">
+            <!-- First Row -->
+            <button class="key function" onclick="clearDisplay()">AC</button>
+            <button class="key function" onclick="deleteLast()">DEL</button>
+            <button class="key operator" onclick="appendOperator('%')">%</button>
+            <button class="key operator" onclick="appendOperator('/')">÷</button>
+
+            <!-- Second Row (Scientific Functions 1) -->
+            <button class="key scientific" onclick="calculateScientific('sin')">sin</button>
+            <button class="key scientific" onclick="calculateScientific('cos')">cos</button>
+            <button class="key scientific" onclick="calculateScientific('tan')">tan</button>
+            <button class="key scientific" onclick="calculateScientific('log')">log</button>
+
+            <!-- Third Row -->
+            <button class="key number" onclick="appendNumber('7')">7</button>
+            <button class="key number" onclick="appendNumber('8')">8</button>
+            <button class="key number" onclick="appendNumber('9')">9</button>
+            <button class="key operator" onclick="appendOperator('*')">×</button>
+
+            <!-- Fourth Row (Scientific Functions 2) -->
+            <button class="key scientific" onclick="calculateScientific('ln')">ln</button>
+            <button class="key scientific" onclick="calculateScientific('sqrt')">√</button>
+            <button class="key scientific" onclick="calculateScientific('pow')">x^y</button>
+            <button class="key scientific" onclick="calculateScientific('fact')">n!</button>
+
+            <!-- Fifth Row -->
+            <button class="key number" onclick="appendNumber('4')">4</button>
+            <button class="key number" onclick="appendNumber('5')">5</button>
+            <button class="key number" onclick="appendNumber('6')">6</button>
+            <button class="key operator" onclick="appendOperator('-')">-</button>
+
+             <!-- Sixth Row (Scientific Functions 3) -->
+             <button class="key scientific" onclick="appendConstant('pi')">π</button>
+             <button class="key scientific" onclick="appendConstant('e')">e</button>
+             <button class="key scientific" onclick="appendOperator('(')">(</button>
+             <button class="key scientific" onclick="appendOperator(')')">)</button>
+
+            <!-- Seventh Row -->
+            <button class="key number" onclick="appendNumber('1')">1</button>
+            <button class="key number" onclick="appendNumber('2')">2</button>
+            <button class="key number" onclick="appendNumber('3')">3</button>
+            <button class="key operator" onclick="appendOperator('+')">+</button>
+
+            <!-- Eighth Row -->
+            <button class="key number zero" onclick="appendNumber('0')">0</button>
+            <button class="key number" onclick="appendNumber('.')">.</button>
+            <button class="key equal" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
